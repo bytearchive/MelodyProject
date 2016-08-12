@@ -26,7 +26,7 @@ class PageController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $pages = $em->getRepository('Melody\SiteBundle:Page')->findAll();
+        $pages = $em->getRepository('MelodySiteBundle:Page')->findAll();
 
         return $this->render('page/index.html.twig', array(
             'pages' => $pages,
@@ -42,7 +42,7 @@ class PageController extends Controller
     public function newAction(Request $request)
     {
         $page = new Page();
-        $form = $this->createForm('Melody\SiteBundle\Form\PageType', $page);
+        $form = $this->createForm('MelodySiteBundle\Form\PageType', $page);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

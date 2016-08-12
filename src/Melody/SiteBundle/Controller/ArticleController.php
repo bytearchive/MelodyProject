@@ -26,7 +26,7 @@ class ArticleController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $articles = $em->getRepository('Melody\SiteBundle:Article')->findAll();
+        $articles = $em->getRepository('MelodySiteBundle:Article')->findAll();
 
         return $this->render('article/index.html.twig', array(
             'articles' => $articles,
@@ -42,7 +42,7 @@ class ArticleController extends Controller
     public function newAction(Request $request)
     {
         $article = new Article();
-        $form = $this->createForm('Melody\SiteBundle\Form\ArticleType', $article);
+        $form = $this->createForm('MelodySiteBundle\Form\ArticleType', $article);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

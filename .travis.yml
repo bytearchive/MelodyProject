@@ -8,6 +8,6 @@ language: php
 before_install:
   - php /home/travis/.phprnv/versions/5.4.25/bin/composer.phar self-update
 before_script:
-  - composer insrall
+  - composer install
 
 #script: phpunit -- configuration phpunit.xml --coverage-text

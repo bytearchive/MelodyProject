@@ -24,5 +24,12 @@ $ composer install
  ```bash
  $ php bin/console server:start 0.0.0.0:8000
  ```
+ 
+## SSH Config
+Add the ssh config to your container and rebuild the project
+ ```bash
+ $ cp ~/.ssh/* $(pwd)/docker/php/ssh
+ $ ./up build
+ ```
     
     

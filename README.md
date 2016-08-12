@@ -1,7 +1,9 @@
-Symfony3 starter
+Melody Project
 ================
 
-A Symfony3 starter with the most popular Bundles.
+[![Build Status](https://travis-ci.org/KevinRaimbaud/MelodyProject.svg?branch=master)](https://travis-ci.org/KevinRaimbaud/MelodyProject)
+
+A Symfony3 starter with the most popular WebMelody Bundles.
 
 ## Build the Docker environment
     

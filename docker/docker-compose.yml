@@ -1,0 +1,61 @@
+php-fpm:
+    build: ./php
+    container_name: php-fpm-symfony
+    links:
+        - db
+    ports:
+        - 9000:9000
+        - 8448:8448
+        - 8000:8000
+    working_dir: /var/www/html/
+    volumes:
+        - ../:/var/www/html
+    volumes_from:
+        - data
+    tty: true
+    env_file:
+        - ./docker.env
+    entrypoint: /entrypoint.sh
+
+nginx:
+    image: nginx
+    container_name: nginx
+    links:
+        - php-fpm
+    ports:
+        - 80:80
+        - 443:443
+    working_dir: /var/www/html
+    volumes:
+        - ./nginx/conf.d:/etc/nginx/conf.d
+    volumes_from:
+        - php-fpm
+        - data
+
+db:
+    image: mysql
+    container_name: mysql
+    ports:
+        - 3306:3306
+    environment:
+        MYSQL_USER: root
+        MYSQL_ROOT_PASSWORD: root
+    volumes_from:
+        - data
+
+data:
+    image: debian
+    container_name: data-symfony
+    working_dir: /var
+    volumes:
+        - /var/lib/mysql
+        - /var/log/nginx
+    tty: yes
+
+phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    links:
+        - db
+    ports:
+        - 8080:80

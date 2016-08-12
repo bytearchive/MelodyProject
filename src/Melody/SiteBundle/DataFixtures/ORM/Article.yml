@@ -1,0 +1,8 @@
+# php bin/console hautelook_alice:doctrine:fixtures:load -n --env=test
+
+Melody\SiteBundle\Entity\Article:
+    article_{1..10}:
+        title: <sentence()>
+        text: <paragraph(100)>
+        categories: [ '@article_category_1', '@article_category_2' ]
+

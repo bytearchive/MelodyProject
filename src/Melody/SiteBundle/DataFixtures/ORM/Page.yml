@@ -1,0 +1,8 @@
+# php bin/console hautelook_alice:doctrine:fixtures:load -n --env=test
+
+Melody\SiteBundle\Entity\Page:
+    page_{1..10}:
+        title: <sentence()>
+        text: <paragraph(100)>
+        categories: [ '@page_category_*' ]
+

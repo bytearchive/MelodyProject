@@ -40,6 +40,11 @@ elif [ $todo = "rm" ]; then
     remove_containers
     exit
 
+elif [ $todo = "rmi" ]; then
+    echo 'Remove images'
+    docker rmi -f $(docker images)
+    exit
+
 elif [ $todo = "up" ]; then
     up
 else

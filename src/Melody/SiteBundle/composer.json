@@ -1,0 +1,25 @@
+{
+  "name": "webmelody/sitebundle",
+  "type": "symfony-bundle",
+  "description": "This Bundle provides a Foundation to bootstrap symfony project",
+  "keywords": ["foundation", "symfony", "bundle", "site"],
+  "homepage": "http://webmelody.github.io",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kevin Raimbaud",
+      "email": "kraim@free.fr"
+    }
+  ],
+
+  "require": {
+    "php": ">=5.6",
+    "webmelody/foundationbundle": "O.O.1"
+  },
+
+  "autoload":{
+    "psr-4":{
+      "Melody\\SiteBundle\\": ""
+    }
+  }
+}

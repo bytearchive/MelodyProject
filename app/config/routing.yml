@@ -1,10 +1,5 @@
-api:
-    resource: "@ApiBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
 app:
-    resource: "@AppBundle/Controller/"
+    resource: "@MelodySiteBundle/Controller/"
     type:     annotation
 
 _liip_imagine:

@@ -4,9 +4,27 @@ FROM php:7.0.8-fpm
 RUN usermod -u 1000 www-data
 
 # Install Packages
-RUN apt-get update && apt-get install -y vim zsh git zlib1g-dev libicu-dev
-RUN docker-php-ext-install pdo pdo_mysql mysqli zip mbstring bcmath intl opcache calendar pcntl
+RUN apt-get update && apt-get install -y \
+    vim \
+    zsh \
+    git \
+    zlib1g-dev \
+    libicu-dev \
+    httpie
 
+RUN docker-php-ext-install \
+    pdo \
+    pdo_mysql \
+    mysqli \
+    zip \
+    mbstring \
+    bcmath \
+    intl \
+    opcache \
+    calendar \
+    pcntl
+
+# Git config
 RUN git config --global core.excludesfile '~/.gitignore_global'
 
 # Instal Oh my Zsh

@@ -1,4 +1,4 @@
-FROM php:7.0.8-fpm
+FROM php:7-fpm
 
 # Right access
 RUN usermod -u 1000 www-data
@@ -10,7 +10,16 @@ RUN apt-get update && apt-get install -y \
     git \
     zlib1g-dev \
     libicu-dev \
+    libexif-dev \
+    wkhtmltopdf \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libmcrypt-dev \
+    libpng12-dev \
     httpie
+
+RUN docker-php-ext-configure \
+    gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
 
 RUN docker-php-ext-install \
     pdo \
@@ -22,15 +31,19 @@ RUN docker-php-ext-install \
     intl \
     opcache \
     calendar \
-    pcntl
+    pcntl \
+    gd \
+    iconv \
+    mcrypt \
+    exif
 
 # Git config
 RUN git config --global core.excludesfile '~/.gitignore_global'
 
 # Instal Oh my Zsh
 RUN bash -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-RUN sed -i -- 's/robbyrussell/wezm+/g' /root/.zshrc # Other awesome theme: random kafeitu sonicradish wezm+
-RUN echo "plugins=(symfony2)" >> ~/.zshrc
+RUN sed -i -- 's/robbyrussell/wezm+/g' ~/.zshrc # Other awesome theme: random kafeitu sonicradish wezm+
+RUN echo "plugins=(git symfony2)" >> ~/.zshrc
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php
@@ -68,7 +81,6 @@ ADD vim/.vimrc /root
 ADD git/.gitignore_global /root
 
 # SSh Config
-ADD ssh /root/.ssh
 ADD ssh /root/.ssh
 RUN if [ -f ~/.ssh/id_rsa ]; then chmod 600 ~/.ssh/id_rsa; fi
 RUN if [ -f ~/.ssh/id_rsa.pub ]; then chmod 600 ~/.ssh/id_rsa.pub; fi

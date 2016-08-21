@@ -1,7 +1,10 @@
 language: php
 php:
-#  - '5.6'
+#    - '5.6'
     - '7.0'
+
+services:
+    - mysql
 
 before_install:
     - php /home/travis/.phpenv/versions/5.6/bin/composer self-update
@@ -14,3 +17,7 @@ before_script:
 
 script:
     - phpunit --configuration phpunit.xml.dist --coverage-text
+
+#notifications:
+#    email:
+#        -  your@mail.here

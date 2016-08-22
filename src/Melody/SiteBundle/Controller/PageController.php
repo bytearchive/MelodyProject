@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Melody\SiteBundle\Entity\Page;
-use Melody\SiteBundle\Form\PageType;
 
 /**
  * Page controller.

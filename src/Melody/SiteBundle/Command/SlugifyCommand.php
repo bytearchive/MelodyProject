@@ -51,8 +51,6 @@ class SlugifyCommand extends ContainerAwareCommand
 
     /**
      * @param $objects
-     *
-     * @return null
      */
     public function persistLoop($objects)
     {
@@ -62,7 +60,7 @@ class SlugifyCommand extends ContainerAwareCommand
             $this->em->persist($object);
         }
 
-        if($object === null){
+        if ($object === null) {
             throw new Exception('Entity not found');
         }
 

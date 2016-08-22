@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Melody\FoundationBundle\Entity\FoundationPost;
 
 /**
- * Article
+ * Article.
  *
  * @ORM\Table(name="article")
  * @ORM\Entity(repositoryClass="Melody\SiteBundle\Repository\ArticleRepository")

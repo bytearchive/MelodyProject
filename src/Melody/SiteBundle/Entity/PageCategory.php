@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Melody\FoundationBundle\Entity\FoundationCategory;
 
 /**
- * PageCategory
+ * PageCategory.
  *
  * @ORM\Table(name="page_category")
  * @ORM\Entity(repositoryClass="Melody\SiteBundle\Repository\PageCategoryRepository")
@@ -22,4 +22,3 @@ class PageCategory extends FoundationCategory
      */
     protected $id;
 }
-

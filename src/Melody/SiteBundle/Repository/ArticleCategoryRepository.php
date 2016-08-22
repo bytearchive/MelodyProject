@@ -3,7 +3,7 @@
 namespace Melody\SiteBundle\Repository;
 
 /**
- * ArticleCategoryRepository
+ * ArticleCategoryRepository.
  */
 class ArticleCategoryRepository extends \Doctrine\ORM\EntityRepository
 {

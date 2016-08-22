@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Melody\FoundationBundle\Entity\FoundationCategory;
 
 /**
- * ArticleCategory
+ * ArticleCategory.
  *
  * @ORM\Table(name="article_category")
  * @ORM\Entity(repositoryClass="Melody\SiteBundle\Repository\ArticleCategoryRepository")
@@ -22,4 +22,3 @@ class ArticleCategory extends FoundationCategory
      */
     protected $id;
 }
-

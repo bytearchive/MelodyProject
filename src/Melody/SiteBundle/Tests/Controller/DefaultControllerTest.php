@@ -13,7 +13,6 @@ class DefaultControllerTest extends WebTestCase
 
         // Create a new entry in the database
         $crawler = $client->request('GET', '/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), 'Unexpected HTTP status code for GET /');
     }
 }
-

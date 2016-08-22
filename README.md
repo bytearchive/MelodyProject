@@ -32,4 +32,12 @@ Add the ssh config to your container and rebuild the project
  $ ./up build
  ```
     
+## Run test in the Docker container
+ ```bash
+ $ phpunit
+ ```
     
+## Run PHP CS Fixer in the Docker container
+ ```bash
+ $ php-cs-fixer fix src/
+ ```

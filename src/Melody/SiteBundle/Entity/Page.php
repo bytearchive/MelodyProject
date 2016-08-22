@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Melody\FoundationBundle\Entity\FoundationPost;
 
 /**
- * Page
+ * Page.
  *
  * @ORM\Table(name="page")
  * @ORM\Entity(repositoryClass="Melody\SiteBundle\Repository\PageRepository")

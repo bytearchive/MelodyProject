@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Melody\SiteBundle\Entity\Article;
-use Melody\SiteBundle\Form\ArticleType;
 
 /**
  * Article controller.

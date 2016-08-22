@@ -7,7 +7,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * FoundationPost
+ * FoundationPost.
  */
 abstract class FoundationPost
 {
@@ -62,7 +62,7 @@ abstract class FoundationPost
     protected $updatedAt;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -72,7 +72,7 @@ abstract class FoundationPost
     }
 
     /**
-     * Set title
+     * Set title.
      *
      * @param string $title
      *
@@ -86,7 +86,7 @@ abstract class FoundationPost
     }
 
     /**
-     * Get title
+     * Get title.
      *
      * @return string
      */
@@ -96,7 +96,7 @@ abstract class FoundationPost
     }
 
     /**
-     * Set text
+     * Set text.
      *
      * @param string $text
      *
@@ -110,7 +110,7 @@ abstract class FoundationPost
     }
 
     /**
-     * Get text
+     * Get text.
      *
      * @return string
      */
@@ -120,7 +120,7 @@ abstract class FoundationPost
     }
 
     /**
-     * Set slug
+     * Set slug.
      *
      * @param string $slug
      *
@@ -134,7 +134,7 @@ abstract class FoundationPost
     }
 
     /**
-     * Get slug
+     * Get slug.
      *
      * @return string
      */

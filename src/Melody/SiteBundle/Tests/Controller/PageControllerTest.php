@@ -13,7 +13,6 @@ class PageControllerTest extends WebTestCase
 
         // Create a new entry in the database
         $crawler = $client->request('GET', '/page/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /page/");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), 'Unexpected HTTP status code for GET /page/');
     }
 }
-

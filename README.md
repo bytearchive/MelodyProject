@@ -31,6 +31,8 @@ Add the ssh config to your container and rebuild the project
  ```bash
  $ cp ~/.ssh/* $(pwd)/docker/php/ssh
  $ ./up build
+ $ eval $(ssh-agent) // Started the SSH agent
+ $ ssh-add           // Add your private key to it
  ```
     
 ## Run test in the Docker container

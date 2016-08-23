@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "php": ">=5.5",
+        "php": ">=5.6",
         "webmelody/foundationbundle": "dev-master",
         "jms/serializer-bundle": "1.1.0",
         "friendsofsymfony/rest-bundle": "2.0.0"

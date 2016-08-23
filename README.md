@@ -23,7 +23,7 @@ $ composer install
 ## Launch the app
  
  ```bash
- $ php bin/console server:start 0.0.0.0:8000
+ $ sf server:start 0.0.0.0:8000
  ```
  
 ## SSH Config

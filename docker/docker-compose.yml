@@ -4,7 +4,6 @@ php-fpm:
     links:
         - db
     ports:
-        - 9000:9000
         - 8448:8448
         - 8000:8000
     working_dir: /var/www/html/
@@ -16,7 +15,7 @@ php-fpm:
     env_file:
         - ./docker.env
     environment:
-        XDEBUG_CONFIG: remote_host=192.168.0.176
+        XDEBUG_CONFIG: remote_host=192.168.0.11
     entrypoint: /entrypoint.sh
 
 nginx:

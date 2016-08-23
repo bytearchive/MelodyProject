@@ -2,6 +2,7 @@ Melody Project
 ================
 
 [![Build Status](https://travis-ci.org/KevinRaimbaud/MelodyProject.svg?branch=master)](https://travis-ci.org/KevinRaimbaud/MelodyProject)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/6bf0a17f-525c-454a-bee6-2e41918831a0/mini.png)](https://insight.sensiolabs.com/projects/6bf0a17f-525c-454a-bee6-2e41918831a0)
 
 A Symfony3 starter with the most popular WebMelody Bundles.
 
@@ -22,7 +23,7 @@ $ composer install
 ## Launch the app
  
  ```bash
- $ php bin/console server:start 0.0.0.0:8000
+ $ sf server:start 0.0.0.0:8000
  ```
  
 ## SSH Config

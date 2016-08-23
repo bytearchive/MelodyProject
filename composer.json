@@ -34,6 +34,7 @@
         "jms/serializer-bundle": "1.1.0",
         "friendsofsymfony/rest-bundle": "2.0.0",
         "friendsofsymfony/jsrouting-bundle": "1.6.0",
+        "doctrine/migrations": "1.2.2",
         "doctrine/doctrine-migrations-bundle": "1.1.1",
         "suncat/mobile-detect-bundle": "1.0.3",
         "fp/jsformvalidator-bundle": "1.4.0",

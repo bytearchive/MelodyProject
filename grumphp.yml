@@ -3,4 +3,8 @@ parameters:
     bin_dir: vendor/bin
     tasks:
         phpcsfixer:
+            config_file: ~
+            config: ~
+            fixers: []
             level: psr2
+            verbose: true

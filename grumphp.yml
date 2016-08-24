@@ -1,4 +1,10 @@
 parameters:
     git_dir: .
     bin_dir: vendor/bin
-    tasks: {  }
+    tasks:
+        phpcsfixer:
+            config_file: ~
+            config: ~
+            fixers: []
+            level: psr2
+            verbose: true

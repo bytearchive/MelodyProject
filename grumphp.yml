@@ -4,7 +4,7 @@ parameters:
     tasks:
         phpcsfixer:
             config_file: ~
-            config: ~
-            fixers: []
+            config: sf23
+            fixers: [psr2, symfony, indentation]
             level: psr2
             verbose: true

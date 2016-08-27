@@ -1,16 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Page edit</h1>
+    <h1>Article</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ article.id }}</td>
+            </tr>
+        </tbody>
+    </table>
 
     <ul>
         <li>
-            <a href="{{ path('page_index') }}">Back to the list</a>
+            <a href="{{ path('article_index') }}">Back to the list</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

@@ -2,7 +2,6 @@
 
 namespace Melody\SiteBundle\Controller\Web;
 
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -37,7 +36,9 @@ class PageController extends Controller
      *
      * @Route("/{id}", name="page_show")
      * @Method("GET")
+     *
      * @param Page $page
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showAction(Page $page)

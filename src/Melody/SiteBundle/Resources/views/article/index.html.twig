@@ -1,26 +1,19 @@
 {% extends 'MelodySiteBundle::base.html.twig' %}
 
-{% block body %}
-    <h1>Articles list</h1>
+{% set namespace = _self.getTemplateName()|split(':') %}
+{% block file %}{{ namespace[1] }}/{{ namespace[2] }}{% endblock %}
 
-    <table>
-        <tbody>
-        {% if articles|length == 0 %}
-            <div class="alert alert-warning">No articles found</div>
-        {% else %}
-            {% for article in articles %}
-                <tr>
-                    <td><a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.id }}</a></td>
-                    <td>
-                        <ul>
-                            <li>
-                                <a href="{{ path('article_show', { 'id': article.id }) }}">show</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-            {% endfor %}
-        {% endif %}
-        </tbody>
-    </table>
+{% block body %}
+    <h1><i class="fa fa-file-text-o" aria-hidden="true"></i> Articles list</h1>
+
+    {% if articles|length == 0 %}
+        <div class="alert alert-warning">
+            <i class="fa fa-warning"></i> No articles found
+        </div>
+    {% else %}
+        {% for article in articles %}
+            <a href="{{ path('article_show', { 'id': article.id }) }}"><h2>{{ article.title }}</h2></a>
+            <div>{{ article.text|slice(0, 500) }}</div>
+        {% endfor %}
+    {% endif %}
 {% endblock %}

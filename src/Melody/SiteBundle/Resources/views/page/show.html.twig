@@ -1,20 +1,10 @@
 {% extends 'MelodySiteBundle::base.html.twig' %}
 
+{% set namespace = _self.getTemplateName()|split(':') %}
+{% block file %}{{ namespace[1] }}/{{ namespace[2] }}{% endblock %}
+
 {% block body %}
-    <h1>Page</h1>
-
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ page.id }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('page_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    <a href="{{ path('page_index') }}"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Back to the list</a>
+    <h1>{{ page.title }}</h1>
+    <div>{{ page.text }}</div>
 {% endblock %}

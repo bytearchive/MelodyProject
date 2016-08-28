@@ -1,18 +1,48 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-            <link href="{{ asset('bundles/melodysite/css/style.css') }}" rel="stylesheet" />
-        {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        <div class="container">
-            {% block body %}{% endblock %}
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link href="{{ asset('bundles/melodysite/css/style.css') }}" rel="stylesheet"/>
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    Melody SiteBundle
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="{% if app.request.attributes.get('_route') == 'homepage' %}active{% endif %}">
+                    <a href="{{ path('homepage') }}">Home</a>
+                </li>
+                <li class="{% if app.request.attributes.get('_route') == 'article_index' %}active{% endif %}">
+                    <a href="{{ path('article_index') }}">Articles</a>
+                </li>
+                <li class="{% if app.request.attributes.get('_route') == 'page_index' %}active{% endif %}">
+                    <a href="{{ path('page_index') }}">Pages</a>
+                </li>
+            </ul>
         </div>
-        {% block javascripts %}{% endblock %}
+    </nav>
+
+    <div class="info">
+        I'm a Melody Template. You can override me by creating a file in :
+        <span class="label label-default">app/Resources/MelodySiteBundle/views/{% block file %}{% endblock %}</span>
+    </div>
+
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
+    {% block javascripts %}
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% endblock %}
     </body>
 </html>

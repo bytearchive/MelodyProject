@@ -1,15 +1,9 @@
 {% extends 'MelodySiteBundle::base.html.twig' %}
 
 {% block body %}
-    <h1>Article list</h1>
+    <h1>Articles list</h1>
 
     <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
         <tbody>
         {% for article in articles %}
             <tr>

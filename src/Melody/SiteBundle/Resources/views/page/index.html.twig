@@ -5,18 +5,22 @@
 
     <table>
         <tbody>
-        {% for page in pages %}
-            <tr>
-                <td><a href="{{ path('page_show', { 'id': page.id }) }}">{{ page.id }}</a></td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('page_show', { 'id': page.id }) }}">show</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
+        {% if pages|length == 0 %}
+            <div class="alert alert-warning">No pages found</div>
+        {% else %}
+            {% for page in pages %}
+                <tr>
+                    <td><a href="{{ path('page_show', { 'id': page.id }) }}">{{ page.id }}</a></td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('page_show', { 'id': page.id }) }}">show</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endif %}
         </tbody>
     </table>
 {% endblock %}

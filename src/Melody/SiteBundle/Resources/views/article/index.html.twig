@@ -5,18 +5,22 @@
 
     <table>
         <tbody>
-        {% for article in articles %}
-            <tr>
-                <td><a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.id }}</a></td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('article_show', { 'id': article.id }) }}">show</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
+        {% if articles|length == 0 %}
+            <div class="alert alert-warning">No articles found</div>
+        {% else %}
+            {% for article in articles %}
+                <tr>
+                    <td><a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.id }}</a></td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('article_show', { 'id': article.id }) }}">show</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endif %}
         </tbody>
     </table>
 {% endblock %}

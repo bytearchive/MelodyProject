@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                Melody SiteBundle
+            </a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="{% if app.request.attributes.get('_route') == 'homepage' %}active{% endif %}">
+                <a href="{{ path('homepage') }}">Home</a>
+            </li>
+            <li class="{% if app.request.attributes.get('_route') == 'article_index' %}active{% endif %}">
+                <a href="{{ path('article_index') }}">Articles</a>
+            </li>
+            <li class="{% if app.request.attributes.get('_route') == 'page_index' %}active{% endif %}">
+                <a href="{{ path('page_index') }}">Pages</a>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Sign In</a></li>
+            <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign Up</a></li>
+        </ul>
+    </div>
+</nav>

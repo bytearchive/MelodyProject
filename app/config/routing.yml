@@ -1,5 +1,5 @@
 app:
-    resource: "@MelodySiteBundle/Controller/"
+    resource: "@MelodySiteBundle/Controller/Web"
     type:     annotation
 
 _liip_imagine:

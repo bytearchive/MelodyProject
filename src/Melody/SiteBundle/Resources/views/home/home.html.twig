@@ -1,0 +1,8 @@
+{% extends 'MelodySiteBundle::base.html.twig' %}
+
+{% set namespace = _self.getTemplateName()|split(':') %}
+{% block file %}{{ namespace[1] }}/{{ namespace[2] }}{% endblock %}
+
+{% block body %}
+    <h1 class="absolute-center">Hello Melody!</h1>
+{% endblock %}
